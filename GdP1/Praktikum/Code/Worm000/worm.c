@@ -74,8 +74,7 @@ int main(void) {
 
     // Print a conventional error message via printf.
     // Note: this only work after the call to  cleanupCursesApp();
-    printf("Das Fenster ist zu klein: wir brauchen mindestens %dx%d\n", msg_len,
-           min_rows);
+    printf("Das Fenster ist zu klein: wir brauchen mindestens %dx%d\n", msg_len, min_rows);
 
     // Set the result code to report the error
     res_code = RES_FAILED;
@@ -100,8 +99,7 @@ int main(void) {
     addch('D');
 
     // Write our message centered onto the display
-    mvprintw(mid_row, start_col, "Das Fenster hat %3d Zeilen und %3d Spalten",
-             COLS, LINES);
+    mvprintw(mid_row, start_col, "Das Fenster hat %3d Zeilen und %3d Spalten", COLS, LINES);
 
     // Refresh the screen in order to show all changes on the screen
     refresh();
