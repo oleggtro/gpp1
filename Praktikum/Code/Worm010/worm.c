@@ -47,7 +47,16 @@ enum GameStates {
 };
 
 // Directions for the worm
-enum WormHeading { WORM_UP, WORM_DOWN, WORM_LEFT, WORM_RIGHT };
+enum WormHeading {
+  WORM_UP,
+  WORM_DOWN,
+  WORM_LEFT,
+  WORM_RIGHT,
+  WORM_DIA_UL,
+  WORM_DIA_DL,
+  WORM_DIA_UR,
+  WORM_DIA_DR
+};
 
 // ********************************************************************************************
 // Global variables
@@ -129,6 +138,19 @@ void readUserInput(enum GameStates *agame_state) {
     case KEY_RIGHT: // User wants right
       setWormHeading(WORM_RIGHT);
       break;
+    case '9': // User wants right
+      setWormHeading(WORM_DIA_UR);
+      break;
+    case '7': // User wants right
+      setWormHeading(WORM_DIA_UL);
+      break;
+    case '1': // User wants right
+      setWormHeading(WORM_DIA_DL);
+      break;
+    case '3': // User wants right
+      setWormHeading(WORM_DIA_DR);
+      break;
+
     case 's': // User wants single step
               // make `getch` blocking
       nodelay(stdscr, false);
@@ -335,6 +357,22 @@ void setWormHeading(enum WormHeading dir) {
   case WORM_RIGHT: // User wants right
     theworm_dx = 1;
     theworm_dy = 0;
+    break;
+  case WORM_DIA_UL: // User wants right
+    theworm_dx = -1;
+    theworm_dy = -1;
+    break;
+  case WORM_DIA_DL: // User wants right
+    theworm_dx = -1;
+    theworm_dy = 1;
+    break;
+  case WORM_DIA_DR: // User wants right
+    theworm_dx = 1;
+    theworm_dy = 1;
+    break;
+  case WORM_DIA_UR: // User wants right
+    theworm_dx = 1;
+    theworm_dy = -1;
     break;
   }
 }
