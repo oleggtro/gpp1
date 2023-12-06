@@ -57,3 +57,7 @@ bin/
 
 ## ignore config files
 .env
+
+
+# ignore compilation artifacts
+*.o
